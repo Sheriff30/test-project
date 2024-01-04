@@ -10,6 +10,16 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
     <style>
       *,
       *::before,
@@ -22,7 +32,7 @@
       html {
         box-sizing: border-box;
         font-size: 62.5%;
-        height: 100vh;
+        height: 102.4rem;
       }
 
       @media only screen and (max-width: 500px) {
@@ -48,6 +58,7 @@
       }
 
       .login-page {
+        height: 100%;
         min-height: 100vh;
         overflow-y: auto;
         position: relative;
@@ -55,8 +66,8 @@
         align-items: center;
         justify-content: center;
         padding: 5rem;
-        background: linear-gradient(rgba(8, 9, 10, 0.8), rgba(8, 9, 10, 0.8)),
-          url(/assets/BackgroundImage.png);
+
+        background: url(https://ecosystemassets.s3.ap-southeast-2.amazonaws.com/BackgroundImage.png);
         background-repeat: no-repeat;
         background-size: cover;
       }
@@ -181,13 +192,36 @@
       a {
         text-decoration: none;
       }
+
+      .password {
+        width: 100%;
+        position: relative;
+      }
+
+      .password input {
+        width: 100%;
+      }
+
+      .eye {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 2rem;
+        font-size: 2rem;
+        cursor: pointer;
+        color: rgba(139, 140, 141, 1);
+      }
     </style>
   </head>
   <body>
     <div class="login-page">
       <div class="login-container">
         <div class="login-header">
-          <img src="/assets/Graphic Icon.png" alt="Graphic Icon" class="logo" />
+          <img
+            src="https://ecosystemassets.s3.ap-southeast-2.amazonaws.com/Graphic+Icon.png"
+            alt="Graphic Icon"
+            class="logo"
+          />
           <p class="color-text1">Login to The Property Videographer</p>
           <p class="color-text2">
             Access the reality of the property video industry. <br />
@@ -196,7 +230,14 @@
         </div>
         <div class="inputs">
           <input class="input-black" type="text" placeholder="Email" />
-          <input class="input-black" type="text" placeholder="Password" />
+          <div class="password">
+            <input
+              class="input-black passwordinput"
+              type="password"
+              placeholder="Password"
+            />
+            <ion-icon class="eye" name="eye-off-outline"></ion-icon>
+          </div>
           <button class="btn btn-black btn-hover login-btn-text">Login</button>
         </div>
         <div class="color-text2 text-center authorize">
@@ -219,5 +260,23 @@
         </div>
       </div>
     </div>
+
+    <script>
+      const passwordcontainer = document.querySelector(".password");
+      const passwordInput = document.querySelector(".passwordinput");
+      const eyeIcon = document.querySelector(".eye");
+
+      eyeIcon.addEventListener("click", function () {
+        passwordcontainer.classList.toggle("active");
+
+        if (passwordcontainer.classList.contains("active")) {
+          passwordInput.type = "text";
+          eyeIcon.name = "eye-outline";
+        } else {
+          passwordInput.type = "password";
+          eyeIcon.name = "eye-off-outline";
+        }
+      });
+    </script>
   </body>
 </html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+      }
+
+      html {
+        box-sizing: border-box;
+        font-size: 62.5%;
+        height: 102.4rem;
+        overflow-y: scroll;
+      }
+
+      @media only screen and (max-width: 500px) {
+        html {
+          font-size: 52.5%;
+          height: 100vh;
+        }
+      }
+      @media only screen and (max-width: 420px) {
+        html {
+          font-size: 42.5%;
+        }
+      }
+      @media only screen and (max-width: 350px) {
+        html {
+          font-size: 35.5%;
+        }
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 1.6rem;
+        height: 100%;
+      }
+
+      .profile-page {
+        height: 100%;
+        min-height: 100vh;
+        overflow-y: auto;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 5rem;
+
+        background: url(https://ecosystemassets.s3.ap-southeast-2.amazonaws.com/BackgroundImage.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .profile-page::-webkit-scrollbar {
+        display: none;
+      }
+
+      .profile-container {
+        width: 44rem;
+      }
+
+      .profile-header {
+        display: grid;
+        gap: 2rem;
+        margin-bottom: 5rem;
+      }
+
+      .logo {
+        display: block;
+        max-width: 100%;
+        height: 4.385rem;
+        margin-top: 2.5rem;
+        margin-left: 2.5rem;
+      }
+
+      .logo img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .color-text1 {
+        color: rgba(204, 204, 204, 1);
+      }
+
+      .color-text2 {
+        color: rgba(139, 140, 141, 1);
+      }
+
+      .color-black {
+        color: rgba(8, 9, 10, 1);
+      }
+
+      .inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .btns {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2.5rem;
+        margin-bottom: 5rem;
+      }
+
+      .signup-help {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .btns button {
+        width: 100%;
+      }
+
+      button,
+      input {
+        height: 4.7rem;
+      }
+
+      .btn {
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      .signup-btn-text {
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+
+      .btn-black {
+        background-color: rgba(16, 18, 19, 1);
+        border: solid 1.5px rgba(207, 255, 31, 0.2);
+        color: rgba(139, 140, 141, 1);
+        outline: none;
+      }
+
+      .btn-hover:hover {
+        background-color: rgba(207, 255, 31, 1);
+        box-shadow: 0px 0px 250px 0px rgba(207, 255, 31, 0.5);
+        transition: all 0.3s ease-in-out;
+        color: rgba(8, 9, 10, 1);
+      }
+
+      .name {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .name input {
+        width: 100%;
+      }
+      .input-black {
+        border-radius: 10px;
+        background-color: rgba(16, 18, 19, 1);
+        border: solid 1.5px rgba(207, 255, 31, 0.2);
+        color: rgba(139, 140, 141, 1);
+        outline: none;
+        padding: 1rem 2rem;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .authorize {
+        font-size: 15px;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .line1 {
+        width: auto;
+        flex-grow: 1;
+        height: 0.5px;
+        background-color: rgba(139, 140, 141, 1);
+      }
+      .line2 {
+        flex-grow: 1;
+        width: auto;
+        height: 0.5px;
+        background-color: rgba(139, 140, 141, 1);
+      }
+
+      .google-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .google-logo {
+        max-width: 100%;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .password {
+        width: 100%;
+        position: relative;
+      }
+
+      .password input {
+        width: 100%;
+      }
+
+      .eye {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 2rem;
+        font-size: 2rem;
+        cursor: pointer;
+        color: rgba(139, 140, 141, 1);
+      }
+    </style>
+  </head>
+  <body>
+    <a class="logo" href="">
+      <img
+        src="https://ecosystemassets.s3.ap-southeast-2.amazonaws.com/Graphic+Icon.png"
+        alt="Graphic Icon"
+      />
+    </a>
+    <div class="profile-page">
+      <div class="profile-container">
+        <div class="profile-header">
+          <p class="color-text1">Create an account</p>
+          <p class="color-text2">
+            Access the reality of the property video industry. <br />
+            Not for the faint of heart.
+          </p>
+        </div>
+        <div class="inputs">
+          <div class="name">
+            <input class="input-black" type="text" placeholder="First Name" />
+            <input class="input-black" type="text" placeholder="Last Name" />
+          </div>
+          <input class="input-black" type="text" placeholder="Email" />
+          <input class="input-black" type="text" placeholder="Phone" />
+          <div class="password">
+            <input
+              class="input-black passwordinput"
+              type="password"
+              placeholder="Password"
+            />
+            <ion-icon class="eye" name="eye-off-outline"></ion-icon>
+          </div>
+          <button class="btn btn-black btn-hover profile-btn-text">
+            Save Changes
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const passwordcontainer = document.querySelector(".password");
+      const passwordInput = document.querySelector(".passwordinput");
+      const eyeIcon = document.querySelector(".eye");
+
+      eyeIcon.addEventListener("click", function () {
+        passwordcontainer.classList.toggle("active");
+
+        if (passwordcontainer.classList.contains("active")) {
+          passwordInput.type = "text";
+          eyeIcon.name = "eye-outline";
+        } else {
+          passwordInput.type = "password";
+          eyeIcon.name = "eye-off-outline";
+        }
+      });
+    </script>
+  </body>
+</html>
